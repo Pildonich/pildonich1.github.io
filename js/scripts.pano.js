@@ -2,9 +2,9 @@ var panorama, panorama2, panorama3, viewer, container, infospot;
 
 container = document.querySelector( '#container' );
 
-panorama = new PANOLENS.ImagePanorama( '/asset/hall.jpg' );
-panorama2 = new PANOLENS.ImagePanorama( '/asset/hall1.jpg' );
-panorama3 = new PANOLENS.ImagePanorama( '/asset/hall2.jpg' );
+panorama = new PANOLENS.ImagePanorama( '/asset/Hall.jpg' );
+panorama2 = new PANOLENS.ImagePanorama( '/asset/Hall1.jpg' );
+panorama3 = new PANOLENS.ImagePanorama( '/asset/Hall2.jpg' );
 
 
 
