@@ -4,30 +4,26 @@ container = document.querySelector( '#container' );
 
 panorama = new PANOLENS.ImagePanorama( 'asset/hall.jpg' );
 panorama2 = new PANOLENS.ImagePanorama( 'asset/hall1.jpg' );
-panorama3 = new PANOLENS.ImagePanorama( 'asset/hall1.jpg' );
+panorama3 = new PANOLENS.ImagePanorama( 'asset/hall2.jpg' );
 
 
 
+  // viewer.setPanorama( panorama2 );
+// } );
 
+// panorama.add( infospot );
 
-// Pair with custom scale and image
-
-
-infospot = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospot.position.set( 2, 1, 1 );
-infospot.addHoverText( "The Story" );
-infospot.addEventListener( 'click', function(){
-  viewer.setPanorama( panorama2 );
-} );
-
-panorama.add( infospot );
-
-viewer = new PANOLENS.Viewer( {container: container});
+viewer = new PANOLENS.Viewer( {output: 'console', container: container});
 viewer.add( panorama, panorama2, panorama3 );
 
-viewer.addUpdateCallback(function(){
-  
-});
+panorama.link( panorama2, new THREE.Vector3( 2600, 200, -1200 ) );
+panorama2.link( panorama, new THREE.Vector3( -763.45, 49.53, -4932.50 ) );
+panorama2.link( panorama3, new THREE.Vector3( 715.82, 179.27, 4934.89 ) );
+panorama3.link( panorama2, new THREE.Vector3( 4861.00, 190.52, -1121.67 ) );
+
+//viewer.addUpdateCallback(function(){
+//  
+//});
 
 
 
